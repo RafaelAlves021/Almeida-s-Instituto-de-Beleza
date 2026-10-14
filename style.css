@@ -1,0 +1,541 @@
+/* ============================================================
+   1. VARIÁVEIS GLOBAIS E PALETA DE CORES
+   Identidade: Almeida's Instituto de Beleza (Preto e Dourado)
+============================================================ */
+:root {
+  /* Cores de Fundo */
+  --bg-primary: #0a0a0a;       /* Fundo principal escuro */
+  --bg-secondary: #141414;     /* Fundo alternado para secções e cartões */
+  --bg-tertiary: #1f1f1f;      /* Fundo para elementos de destaque */
+
+  /* Cores Douradas (Identidade Visual) */
+  --gold-primary: #d4af37;     /* Dourado metálico padrão */
+  --gold-secondary: #b59029;   /* Dourado escuro para efeitos de hover */
+  --gold-light: #f3e5ab;       /* Dourado suave para etiquetas e realces */
+
+  /* Cores de Texto */
+  --text-primary: #f5f5f5;     /* Texto claro de alta legibilidade */
+  --text-muted: #a3a3a3;       /* Texto secundário e legendas */
+
+  /* Tipografias */
+  --font-title: 'Playfair Display', serif;
+  --font-body: 'Poppins', sans-serif;
+
+  /* Transições e Animações */
+  --transition: all 0.3s ease;
+}
+
+/* ============================================================
+   2. RESET E REGRAS BASE
+============================================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-body);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+body {
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Contentor centralizador para limitar a largura do conteúdo */
+.container {
+  width: 90%;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+/* ============================================================
+   3. TIPOGRAFIA E ELEMENTOS GLOBAIS
+============================================================ */
+h1, h2, h3 {
+  font-family: var(--font-title);
+  color: #ffffff;
+}
+
+.section {
+  padding: 80px 0;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-tag {
+  display: inline-block;
+  color: var(--gold-primary);
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.section-header h2 {
+  font-size: 2.3rem;
+  margin-bottom: 10px;
+}
+
+.section-header p {
+  color: var(--text-muted);
+}
+
+/* ============================================================
+   4. BOTÕES
+============================================================ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+/* Botão principal em degradé dourado */
+.btn-gold {
+  background: linear-gradient(135deg, var(--gold-primary), var(--gold-secondary));
+  color: #000000;
+  border: none;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+}
+
+.btn-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
+}
+
+/* Botão com contorno dourado */
+.btn-gold-outline {
+  border: 1px solid var(--gold-primary);
+  color: var(--gold-primary);
+  background: transparent;
+}
+
+.btn-gold-outline:hover {
+  background-color: var(--gold-primary);
+  color: #000000;
+}
+
+/* Botão secundário escuro com contorno subtil */
+.btn-dark-outline {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  background: transparent;
+}
+
+.btn-dark-outline:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: #ffffff;
+}
+
+/* ============================================================
+   5. CABEÇALHO (NAVBAR) & LOGOMARCA
+============================================================ */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(10, 10, 10, 0.95);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+  transition: var(--transition);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 10px 20px;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+/* Logomarca com tamanho ampliado e proporções preservadas */
+.logo-img {
+  height: 75px;        /* Aumentado para garantir visibilidade e impacto */
+  width: auto;         /* Mantém o rácio original sem distorcer */
+  display: block;
+  object-fit: contain;
+  transition: var(--transition);
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 24px;
+}
+
+.nav-link {
+  color: #e5e5e5;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: var(--transition);
+}
+
+.nav-link:hover {
+  color: var(--gold-primary);
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+/* ============================================================
+   6. SECÇÃO PRINCIPAL (HERO SECTION)
+============================================================ */
+.hero {
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  /* Espaço superior aumentado para 145px para acomodar a nova altura da logomarca */
+  padding: 145px 0 60px;
+  background: radial-gradient(circle at 80% 20%, rgba(212, 175, 55, 0.08) 0%, rgba(10, 10, 10, 1) 70%);
+}
+
+.hero-content {
+  max-width: 680px;
+}
+
+.badge {
+  display: inline-block;
+  background-color: rgba(212, 175, 55, 0.1);
+  border: 1px solid var(--gold-primary);
+  color: var(--gold-primary);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  line-height: 1.2;
+  margin-bottom: 18px;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  margin-bottom: 30px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* ============================================================
+   7. SECÇÃO SOBRE / AVALIAÇÃO CAPILAR
+============================================================ */
+.about {
+  background-color: var(--bg-secondary);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.about-text h2 {
+  font-size: 2.2rem;
+  margin-bottom: 16px;
+}
+
+.about-text p {
+  color: var(--text-muted);
+  margin-bottom: 24px;
+}
+
+.about-features {
+  list-style: none;
+}
+
+.about-features li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+  color: #eaeaea;
+}
+
+.about-features i {
+  color: var(--gold-primary);
+  font-size: 1.3rem;
+}
+
+.about-card-highlight {
+  background: linear-gradient(145deg, #1f1f1f, #141414);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 16px;
+  padding: 40px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.highlight-icon {
+  font-size: 2.5rem;
+  color: var(--gold-primary);
+  margin-bottom: 12px;
+}
+
+.highlight-inner h3 {
+  font-size: 1.8rem;
+  color: var(--gold-primary);
+  margin-bottom: 10px;
+}
+
+.highlight-inner p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+}
+
+.badge-time {
+  display: inline-block;
+  padding: 6px 14px;
+  background-color: rgba(39, 174, 96, 0.15);
+  color: #2ecc71;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* ============================================================
+   8. SECÇÃO DE SERVIÇOS
+============================================================ */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+}
+
+.service-card {
+  background-color: var(--bg-secondary);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 14px;
+  padding: 30px 24px;
+  transition: var(--transition);
+}
+
+.service-card:hover {
+  border-color: var(--gold-primary);
+  transform: translateY(-5px);
+}
+
+.service-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background-color: rgba(212, 175, 55, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold-primary);
+  font-size: 1.6rem;
+  margin-bottom: 18px;
+}
+
+.service-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 12px;
+}
+
+.service-card p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* ============================================================
+   9. SECÇÃO DE DEPOIMENTOS
+============================================================ */
+.testimonials {
+  background-color: var(--bg-secondary);
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.testimonial-card {
+  background-color: var(--bg-tertiary);
+  border-radius: 12px;
+  padding: 26px;
+  border: 1px solid rgba(212, 175, 55, 0.15);
+}
+
+.stars {
+  color: var(--gold-primary);
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+.testimonial-card p {
+  font-style: italic;
+  color: #e0e0e0;
+  font-size: 0.95rem;
+  margin-bottom: 16px;
+}
+
+.testimonial-card .author {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--gold-light);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* ============================================================
+   10. SECÇÃO DE LOCALIZAÇÃO E CONTATO
+============================================================ */
+.location-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.location-info h2 {
+  font-size: 2.2rem;
+  margin-bottom: 12px;
+}
+
+.location-info > p {
+  color: var(--text-muted);
+  margin-bottom: 24px;
+}
+
+.info-item {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.info-item i {
+  color: var(--gold-primary);
+  font-size: 1.6rem;
+  margin-top: 4px;
+}
+
+.info-item strong {
+  display: block;
+  font-size: 0.95rem;
+  color: #ffffff;
+}
+
+.info-item p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* ============================================================
+   11. RODAPÉ E BOTÃO FLUTUANTE DE WHATSAPP
+============================================================ */
+.footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 30px 0;
+  background-color: #060606;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background-color: #25d366;
+  color: #ffffff;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+  z-index: 999;
+  transition: var(--transition);
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+}
+
+/* ============================================================
+   12. RESPONSIVIDADE (ECRÃS ATÉ 768px)
+============================================================ */
+@media (max-width: 768px) {
+  .logo-img {
+    height: 60px; /* Redução suave no telemóvel para não ocupar demasiado espaço vertical */
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-list {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background-color: var(--bg-primary);
+    flex-direction: column;
+    padding: 24px 0;
+    gap: 18px;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    display: none;
+  }
+
+  .nav-list.active {
+    display: flex;
+  }
+
+  .hero {
+    padding: 130px 0 50px;
+  }
+
+  .hero h1 {
+    font-size: 2.1rem;
+  }
+
+  .about-grid,
+  .location-grid {
+    grid-template-columns: 1fr;
+  }
+}

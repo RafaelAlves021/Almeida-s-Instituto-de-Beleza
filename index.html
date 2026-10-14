@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Almeida's Instituto de Beleza | Especialista em Cachos e Saúde Capilar</title>
+  
+  <!-- Fontes do Google: Playfair Display para títulos elegantes e Poppins para leitura -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  
+  <!-- Ícones Phosphor Icons -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  
+  <!-- Folha de estilo -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- CABEÇALHO / NAVBAR -->
+  <header class="header" id="header">
+    <nav class="nav-container">
+      <a href="#inicio" class="logo-link">
+        <!-- Salve a imagem da logo enviada como logo.png na pasta do projeto -->
+        <img src="img/logo.png" alt="Logo Almeida's Instituto de Beleza" class="logo-img">
+      </a>
+
+      <button class="menu-toggle" id="menu-toggle" aria-label="Abrir Menu">
+        <i class="ph ph-list"></i>
+      </button>
+
+      <ul class="nav-list" id="nav-list">
+        <li><a href="#inicio" class="nav-link">Início</a></li>
+        <li><a href="#sobre" class="nav-link">O Instituto</a></li>
+        <li><a href="#servicos" class="nav-link">Serviços</a></li>
+        <li><a href="#depoimentos" class="nav-link">Avaliações</a></li>
+        <li><a href="#contato" class="nav-link">Localização</a></li>
+        <li>
+          <a href="https://wa.me/5521997761058?text=Olá!%20Gostaria%20de%20agendar%20um%20horário%20no%20Almeida's%20Instituto%20de%20Beleza." target="_blank" class="btn btn-gold-outline nav-btn">Agendar Horário</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO SECTION (DESTAQUE) -->
+    <section class="hero" id="inicio">
+      <div class="hero-overlay"></div>
+      <div class="container hero-content">
+        <span class="badge">Especialistas em Cachos & Saúde dos Fios</span>
+        <h1>Realce sua beleza natural com quem entende do seu cabelo</h1>
+        <p>Atendimento acolhedor, profissionais altamente qualificados e avaliação com cosmetologista para transformar a sua autoestima em Realengo.</p>
+        <div class="hero-actions">
+          <a href="https://wa.me/5521997761058?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20marcar%20uma%20avaliação." target="_blank" class="btn btn-gold">
+            <i class="ph ph-whatsapp-logo"></i> Agendar pelo WhatsApp
+          </a>
+          <a href="#servicos" class="btn btn-dark-outline">Conhecer Serviços</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOBRE O INSTITUTO / AVALIAÇÃO CAPILAR -->
+    <section class="section about" id="sobre">
+      <div class="container about-grid">
+        <div class="about-text">
+          <span class="section-tag">Cuidado & Ciência</span>
+          <h2>Avaliação Capilar com Cosmetologista</h2>
+          <p>
+            No <strong>Almeida's Instituto de Beleza</strong>, cada cabelo é tratado como único. Antes de qualquer química ou corte, realizamos uma análise completa para diagnosticar a estrutura, hidratação e força dos seus fios.
+          </p>
+          <ul class="about-features">
+            <li><i class="ph ph-check-circle"></i> Identificação das necessidades reais dos fios</li>
+            <li><i class="ph ph-check-circle"></i> Protocolos para brilho, maciez e definição duradoura</li>
+            <li><i class="ph ph-check-circle"></i> Atendimento personalizado em ambiente climatizado e acolhedor</li>
+          </ul>
+        </div>
+        <div class="about-card-highlight">
+          <div class="highlight-inner">
+            <i class="ph ph-sparkle highlight-icon"></i>
+            <h3>5,0 ★ no Google</h3>
+            <p>Mais de 5.000 avaliações elogiando o atendimento e carinho com nossas clientes.</p>
+            <div class="badge-time">Aberto até às 19:00</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVIÇOS -->
+    <section class="section services" id="servicos">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">O que oferecemos</span>
+          <h2>Tratamentos em Destaque</h2>
+          <p>Técnicas exclusivas para valorizar sua identidade e seus fios.</p>
+        </div>
+
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon"><i class="ph ph-flower"></i></div>
+            <h3>Cachos Perfeitos</h3>
+            <p>Técnicas de corte a seco, hidratação profunda, cronograma capilar e finalização com máxima definição e leveza.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon"><i class="ph ph-scissors"></i></div>
+            <h3>Cortes Especializados</h3>
+            <p>Cortes modernos que valorizam o seu formato de rosto, trazendo praticidade e movimento para o seu dia a dia.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon"><i class="ph ph-magic-wand"></i></div>
+            <h3>Mega Inteligente</h3>
+            <p>Alinhamento capilar moderno sem danificar a fibra capilar, garantindo balanço natural e brilho espelhado.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon"><i class="ph ph-first-aid"></i></div>
+            <h3>Recuperação Capilar</h3>
+            <p>Tratamentos de reposição de massa, nutrição e reconstrução com ativos de alta performance.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DEPOIMENTOS DO GOOGLE -->
+    <section class="section testimonials" id="depoimentos">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Experiências</span>
+          <h2>O que nossas clientes dizem</h2>
+          <p>Avaliações reais retiradas diretamente do Google Meu Negócio.</p>
+        </div>
+
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p>"Ótimo atendimento, profissionais muito qualificados e um ambiente acolhedor."</p>
+            <span class="author">Cliente Google</span>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p>"Meu salão preferido, cliente há mais de dois anos. Meninas muito agradáveis!"</p>
+            <span class="author">Cliente Google</span>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p>"Lugar agradável, pessoal simpático e atencioso, bom profissional."</p>
+            <span class="author">Cliente Google</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOCALIZAÇÃO E CONTATO -->
+    <section class="section location" id="contato">
+      <div class="container location-grid">
+        <div class="location-info">
+          <span class="section-tag">Onde estamos</span>
+          <h2>Venha nos visitar</h2>
+          <p>Estamos convenientemente localizados em Realengo, prontos para receber você.</p>
+          
+          <div class="info-item">
+            <i class="ph ph-map-pin"></i>
+            <div>
+              <strong>Endereço</strong>
+              <p>Rua União, 775 - Realengo, Rio de Janeiro - RJ, 21765-210</p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <i class="ph ph-phone"></i>
+            <div>
+              <strong>Telefone & WhatsApp</strong>
+              <p>(21) 99776-1058</p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <i class="ph ph-clock"></i>
+            <div>
+              <strong>Horário de Funcionamento</strong>
+              <p>Segunda a Sábado: Aberto até às 19:00</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="map-box">
+          <!-- Google Maps Embed apontando para o endereço exato do salão -->
+          <iframe 
+            src="https://www.google.com/maps?q=Rua+União,+775+-+Realengo,+Rio+de+Janeiro+-+RJ&output=embed" 
+            width="100%" 
+            height="320" 
+            style="border:0; border-radius: 12px;" 
+            allowfullscreen="" 
+            loading="lazy">
+          </iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <p>&copy; 2026 Almeida's Instituto de Beleza. Todos os direitos reservados.</p>
+      <p>Desenvolvido com excelência para cuidados capilares.</p>
+    </div>
+  </footer>
+
+  <!-- BOTÃO FLUTUANTE DO WHATSAPP -->
+  <a href="https://wa.me/5521997761058?text=Olá!%20Gostaria%20de%20saber%20mais%20informações%20sobre%20os%20serviços." target="_blank" class="whatsapp-float" aria-label="Falar pelo WhatsApp">
+    <i class="ph ph-whatsapp-logo"></i>
+  </a>
+
+  <!-- Script JS -->
+  <script src="script.js"></script>
+</body>
+</html>
